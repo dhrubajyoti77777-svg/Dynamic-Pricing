@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dynamic Coffee Pricing</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            ☕ Dynamic Coffee
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+            <p class="tag">AI POWERED PRICING</p>
+
+            <h1>
+                Your Coffee.<br>
+                <span>Dynamic Price.</span>
+            </h1>
+
+            <p class="description">
+                Our coffee prices automatically adapt to market conditions
+                using machine learning.
+            </p>
+        </section>
+
+
+        <section class="coffee-card">
+
+            <div class="coffee-header">
+                <div>
+                    <p class="label">TODAY'S COFFEE</p>
+
+                    <h2 id="coffeeName">
+                        Cappicinu
+                    </h2>
+                </div>
+
+                <div class="coffee-icon">
+                    ☕
+                </div>
+            </div>
+
+
+            <div class="price-section">
+
+                <p class="label">
+                    CURRENT PRICE
+                </p>
+
+                <div class="price" id="currentPrice">
+                    ₹--
+                </div>
+
+                <p class="price-status" id="priceStatus">
+                    Loading price...
+                </p>
+
+            </div>
+
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <span class="info-icon">🌡️</span>
+
+                    <div>
+                        <p>Temperature</p>
+                        <strong id="temperature">
+                            -- °C
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="info-card">
+                    <span class="info-icon">📈</span>
+
+                    <div>
+                        <p>Demand</p>
+                        <strong id="demand">
+                            --
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="info-card">
+                    <span class="info-icon">🛒</span>
+
+                    <div>
+                        <p>Units Sold</p>
+                        <strong id="unitsSold">
+                            --
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="info-card">
+                    <span class="info-icon">🔄</span>
+
+                    <div>
+                        <p>Last Updated</p>
+                        <strong id="lastUpdated">
+                            --
+                        </strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="pricing-info">
+
+            <h3>
+                How Dynamic Pricing Works
+            </h3>
+
+            <div class="steps">
+
+                <div class="step">
+                    <span>01</span>
+
+                    <div>
+                        <h4>Market Data</h4>
+
+                        <p>
+                            The system collects real-time market
+                            and environmental data.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="step">
+                    <span>02</span>
+
+                    <div>
+                        <h4>Machine Learning</h4>
+
+                        <p>
+                            Our trained Random Forest model analyzes
+                            the current conditions.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="step">
+                    <span>03</span>
+
+                    <div>
+                        <h4>Dynamic Price</h4>
+
+                        <p>
+                            A new recommended coffee price is
+                            automatically calculated.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            Dynamic Pricing System • Machine Learning Project
+        </p>
+    </footer>
+
+
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>

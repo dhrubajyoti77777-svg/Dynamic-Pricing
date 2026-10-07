@@ -40,7 +40,6 @@ for label, value in zip(
 # ==========================================
 # FEATURES & TARGET
 # ==========================================
-
 X = data.drop("RecommendedPrice", axis=1)
 
 y = data["RecommendedPrice"]

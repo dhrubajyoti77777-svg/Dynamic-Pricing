@@ -1,5 +1,6 @@
 const Coffee=require("../models/coffeeModel");
 const { predictPrice } = require("../services/mlService");
+const getTemperature = require("../services/weatherService");
 
 
 
@@ -78,7 +79,10 @@ const getCoffees= async (req,res)=>{
 
         try{
 
+            temp=await getTemperature();
+
             const coffees=await Coffee.find();
+            coffees.push({demand: "high", temperature: temp})
             res.status(200).json(coffees);
 
 

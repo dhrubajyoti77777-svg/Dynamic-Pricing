@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f1eb;
+    color: #2b211c;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    background: #2b211c;
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+    padding: 70px 20px 45px;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    color: #9a5b32;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #9a5b32;
+}
+
+.description {
+    max-width: 600px;
+    margin: auto;
+    color: #756961;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   COFFEE CARD
+========================= */
+
+.coffee-card {
+    background: white;
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 15px 45px rgba(60, 40, 25, 0.08);
+}
+
+.coffee-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee7e0;
+    padding-bottom: 25px;
+}
+
+.label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #9a5b32;
+    margin-bottom: 8px;
+}
+
+.coffee-header h2 {
+    font-size: 32px;
+}
+
+.coffee-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #f5ebe2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.price-section {
+    padding: 35px 0;
+    text-align: center;
+}
+
+.price {
+    font-size: 64px;
+    font-weight: 800;
+    margin: 5px 0;
+    color: #2b211c;
+}
+
+.price-status {
+    color: #756961;
+    font-size: 14px;
+}
+
+
+/* =========================
+   INFO GRID
+========================= */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.info-card {
+    background: #f8f5f1;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.info-icon {
+    font-size: 24px;
+}
+
+.info-card p {
+    font-size: 12px;
+    color: #81756d;
+    margin-bottom: 5px;
+}
+
+.info-card strong {
+    font-size: 16px;
+}
+
+
+/* =========================
+   PRICING INFO
+========================= */
+
+.pricing-info {
+    padding: 70px 0;
+}
+
+.pricing-info h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.step {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    display: flex;
+    gap: 18px;
+    box-shadow: 0 8px 25px rgba(60, 40, 25, 0.05);
+}
+
+.step > span {
+    font-size: 14px;
+    font-weight: 800;
+    color: #9a5b32;
+}
+
+.step h4 {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.step p {
+    color: #756961;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #2b211c;
+    color: #cfc4bd;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 50px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .coffee-card {
+        padding: 22px;
+    }
+
+    .coffee-header h2 {
+        font-size: 26px;
+    }
+
+    .price {
+        font-size: 50px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

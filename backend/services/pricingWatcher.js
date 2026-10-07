@@ -28,14 +28,11 @@ const runDynamicPricing = async (competitorCoffee) => {
 
 
         // Get current runtime data
-        const {
-            hour,
-            weekend
-        } = getRuntimeData();
+        const {hour, weekend} = getRuntimeData();
 
 
         // Get real temperature
-        const temperature = await getTemperature();
+        const temperature = await getTemperature() || 31;
 
 
         // Get holiday status
@@ -274,7 +271,7 @@ const startPricingWatcher = () => {
 
         }
 
-    }, 5 * 60 * 1000);
+    }, 1 * 60 * 1000);
 
 
     console.log(

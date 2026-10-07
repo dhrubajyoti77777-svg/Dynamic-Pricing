@@ -285,7 +285,7 @@ const startPricingWatcher = () => {
     );
 
     console.log(
-        "Periodic pricing → every 5 minutes"
+        "Periodic pricing → every 1 minutes"
     );
 
 };

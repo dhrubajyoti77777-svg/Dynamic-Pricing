@@ -1,4 +1,6 @@
-const API_URL = "http://localhost:3000/api/coffees";
+// const API_URL = "http://localhost:3000/api/coffees";
+const API_URL =
+    "https://dynamic-pricing-backend-gidh.onrender.com/api/coffees";
 
 // ======================================================
 // FETCH COFFEE DATA

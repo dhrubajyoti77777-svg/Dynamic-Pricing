@@ -230,11 +230,13 @@ const startPricingWatcher = () => {
 
     setInterval(async () => {
 
+        console.log("🔥 PERIODIC PRICING TIMER FIRED");
+
         try {
 
             console.log("\n");
             console.log("====================================");
-            console.log("5-MINUTE DYNAMIC PRICING RUN");
+            console.log("1-MINUTE DYNAMIC PRICING RUN");
             console.log("====================================");
 
 

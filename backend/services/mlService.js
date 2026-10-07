@@ -3,7 +3,7 @@ const axios = require("axios");
 const predictPrice = async (input) => {
     try {
         const response = await axios.post(
-            "http://localhost:5000/predict",
+            "https://dynamic-pricing-ml-a248.onrender.com/predict",
             input
         );
 

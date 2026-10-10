@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2b211c">
+    <title>Coffee Price | Dynamic Coffee</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/coffee.css">
+</head>
+<body>
+    <header class="navbar">
+        <a class="logo" href="./index.html">
+            <span aria-hidden="true">☕</span> Dynamic Coffee
+        </a>
+    </header>
+
+    <main class="container coffee-page">
+        <a class="back-button" href="./index.html">← All coffees</a>
+
+        <section class="coffee-card" aria-labelledby="coffeeName">
+            <div class="coffee-header">
+                <div>
+                    <p class="label">YOUR SELECTION</p>
+                    <h1 id="coffeeName">Loading coffee...</h1>
+                </div>
+                <div class="coffee-icon" aria-hidden="true">☕</div>
+            </div>
+
+            <div class="price-section">
+                <p class="label">CURRENT PRICE</p>
+                <div class="price" id="currentPrice">—</div>
+                <p class="price-status" id="priceStatus" role="status">
+                    Loading latest price...
+                </p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <span class="info-icon" aria-hidden="true">🌡️</span>
+                    <div>
+                        <p>Temperature</p>
+                        <strong id="temperature">Not available</strong>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <span class="info-icon" aria-hidden="true">↻</span>
+                    <div>
+                        <p>Last updated</p>
+                        <strong id="lastUpdated">Not available</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+<section class="price-history-section">
+    <div class="price-history-heading">
+        <div>
+            <p class="eyebrow">PRICE ANALYTICS</p>
+            <h2>Price History</h2>
+            <p>Track the last 10 recorded price changes.</p>
+        </div>
+        <span class="history-count" id="historyCount">0 records</span>
+    </div>
+
+    <p id="historyStatus" class="history-status" role="status">
+        Loading price history...
+    </p>
+
+    <div class="price-chart-container">
+        <canvas id="priceHistoryChart"
+                aria-label="Coffee price history chart"
+                role="img"></canvas>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    </main>
+
+    <footer>
+        <p>Dynamic Pricing System · Machine Learning Project</p>
+    </footer>
+<script src="./js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./js/coffee.js"></script>
+</body>
+</html>

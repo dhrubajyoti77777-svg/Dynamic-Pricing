@@ -1,194 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="theme-color" content="#2b211c">
     <title>Dynamic Coffee Pricing</title>
-
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
-
 <body>
 
-    <header class="navbar">
-        <div class="logo">
-            ☕ Dynamic Coffee
+<header class="navbar">
+    <div class="nav-container">
+        <a class="logo" href="./index.html">
+            <span class="logo-icon" aria-hidden="true">☕</span>
+            <span>Dynamic<span class="logo-highlight">Coffee</span></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+            <a class="nav-link active" href="./index.html">Home</a>
+            <a class="nav-link" href="#coffeeListTitle">Our Coffees</a>
+        </nav>
+
+        <div class="nav-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Live Prices</span>
         </div>
-    </header>
-
-
+    </div>
+</header>
     <main class="container">
-
         <section class="hero">
-            <p class="tag">AI POWERED PRICING</p>
-
-            <h1>
-                Your Coffee.<br>
-                <span>Dynamic Price.</span>
-            </h1>
-
+            <p class="tag">COFFEE, PRICED FOR THE MOMENT</p>
+            <h1>Your Coffee.<br><span>Dynamic Price.</span></h1>
             <p class="description">
-                Our coffee prices automatically adapt to market conditions
-                using machine learning.
+                Explore our coffees and see the latest prices set by our pricing engine.
             </p>
         </section>
 
-
-        <section class="coffee-card">
-
-            <div class="coffee-header">
+        <section class="list-view" aria-labelledby="coffeeListTitle">
+            <div class="section-heading">
                 <div>
-                    <p class="label">TODAY'S COFFEE</p>
-
-                    <h2 id="coffeeName">
-                        Cappicinu
-                    </h2>
+                    <p class="eyebrow">THE MENU</p>
+                    <h2 id="coffeeListTitle">Choose your coffee</h2>
                 </div>
-
-                <div class="coffee-icon">
-                    ☕
-                </div>
+                <p class="list-hint">Select a coffee to view its current price.</p>
             </div>
 
+            <p id="listStatus" class="status-message" role="status">
+                Loading coffees...
+            </p>
 
-            <div class="price-section">
-
-                <p class="label">
-                    CURRENT PRICE
-                </p>
-
-                <div class="price" id="currentPrice">
-                    ₹--
-                </div>
-
-                <p class="price-status" id="priceStatus">
-                    Loading price...
-                </p>
-
-            </div>
-
-
-            <div class="info-grid">
-
-                <div class="info-card">
-                    <span class="info-icon">🌡️</span>
-
-                    <div>
-                        <p>Temperature</p>
-                        <strong id="temperature">
-                            -- °C
-                        </strong>
-                    </div>
-                </div>
-
-
-                <div class="info-card">
-                    <span class="info-icon">📈</span>
-
-                    <div>
-                        <p>Demand</p>
-                        <strong id="demand">
-                            --
-                        </strong>
-                    </div>
-                </div>
-
-
-                <div class="info-card">
-                    <span class="info-icon">🛒</span>
-
-                    <div>
-                        <p>Units Sold</p>
-                        <strong id="unitsSold">
-                            --
-                        </strong>
-                    </div>
-                </div>
-
-
-                <div class="info-card">
-                    <span class="info-icon">🔄</span>
-
-                    <div>
-                        <p>Last Updated</p>
-                        <strong id="lastUpdated">
-                            --
-                        </strong>
-                    </div>
-                </div>
-
-            </div>
-
+            <div id="coffeeGrid" class="coffee-grid"></div>
         </section>
-
-
-        <section class="pricing-info">
-
-            <h3>
-                How Dynamic Pricing Works
-            </h3>
-
-            <div class="steps">
-
-                <div class="step">
-                    <span>01</span>
-
-                    <div>
-                        <h4>Market Data</h4>
-
-                        <p>
-                            The system collects real-time market
-                            and environmental data.
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="step">
-                    <span>02</span>
-
-                    <div>
-                        <h4>Machine Learning</h4>
-
-                        <p>
-                            Our trained Random Forest model analyzes
-                            the current conditions.
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="step">
-                    <span>03</span>
-
-                    <div>
-                        <h4>Dynamic Price</h4>
-
-                        <p>
-                            A new recommended coffee price is
-                            automatically calculated.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
     </main>
 
-
     <footer>
-        <p>
-            Dynamic Pricing System • Machine Learning Project
-        </p>
+        <p>Dynamic Pricing System · Machine Learning Project</p>
     </footer>
 
-
-    <script src="./js/app.js"></script>
-
+    <script src="./js/config.js"></script>
+    <script src="./js/index.js"></script>
 </body>
-
 </html>

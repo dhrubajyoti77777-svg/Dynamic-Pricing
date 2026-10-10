@@ -1,0 +1,184 @@
+
+/* ========================================
+   HOMEPAGE — COFFEE MENU
+======================================== */
+
+.list-view {
+    padding-bottom: 10px;
+}
+
+.coffee-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* Coffee cards */
+
+.coffee-option {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    min-width: 0;
+    padding: 24px 20px;
+
+    background: #1b2230;
+    border: 1px solid #303a4d;
+    border-radius: 18px;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+
+    cursor: pointer;
+
+    transition:
+        transform 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.coffee-option:hover {
+    transform: translateY(-4px);
+
+    background: #222d40;
+    border-color: #4f8cff;
+
+    box-shadow:
+        0 14px 38px rgba(0, 0, 0, 0.28),
+        0 0 28px rgba(79, 140, 255, 0.12);
+}
+
+.coffee-option:focus-visible {
+    outline: 3px solid #70a3ff;
+    outline-offset: 4px;
+}
+
+/* Coffee icon */
+
+.option-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 54px;
+    height: 54px;
+
+    background: #26344b;
+    border: 1px solid #354a6b;
+    border-radius: 16px;
+
+    font-size: 1.8rem;
+}
+
+/* Coffee information */
+
+.option-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.option-name {
+    color: #f1f5f9;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.option-price {
+    margin-top: 6px;
+
+    color: #8ab0ff;
+    font-size: 1.15rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+.option-hint {
+    margin-top: 5px;
+
+    color: #a0aec0;
+    font-size: 0.78rem;
+}
+
+/* Navigation arrow */
+
+.option-arrow {
+    flex-shrink: 0;
+
+    color: #70a3ff;
+    font-size: 1.5rem;
+
+    transition: transform 180ms ease;
+}
+
+.coffee-option:hover .option-arrow {
+    transform: translateX(4px);
+}
+
+/* Loading and empty states */
+
+.status-message {
+    color: #a0aec0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.status-message:empty,
+.coffee-grid:empty {
+    display: none;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .coffee-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .coffee-option {
+        padding: 20px 16px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 560px) {
+    .coffee-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .coffee-option {
+        padding: 18px;
+    }
+
+    .option-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.6rem;
+    }
+
+    .option-name {
+        font-size: 1rem;
+    }
+
+    .option-price {
+        font-size: 1.08rem;
+    }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .coffee-option,
+    .option-arrow {
+        transition: none;
+    }
+
+    .coffee-option:hover {
+        transform: none;
+    }
+}

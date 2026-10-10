@@ -1,0 +1,263 @@
+
+/* ========================================
+   COFFEE DETAIL PAGE
+   Midnight Charcoal + Electric Blue
+======================================== */
+
+.detail-view {
+    max-width: 760px;
+    margin: 34px auto 80px;
+}
+
+/* Back button */
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 24px;
+    padding: 10px 16px;
+
+    color: #8ab0ff;
+    background: #1b2230;
+    border: 1px solid #303a4d;
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    transition:
+        background 180ms ease,
+        border-color 180ms ease;
+}
+
+.back-button:hover {
+    background: #222d40;
+    border-color: #4f8cff;
+}
+
+/* Main coffee card */
+
+.coffee-card {
+    overflow: hidden;
+
+    background: #1b2230;
+    border: 1px solid #303a4d;
+    border-radius: 26px;
+
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.28);
+}
+
+/* Coffee name header */
+
+.coffee-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 30px 32px;
+
+    border-bottom: 1px solid #303a4d;
+}
+
+.coffee-header h2 {
+    margin-top: 8px;
+
+    color: #f1f5f9;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.label {
+    color: #70a3ff;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+/* Coffee icon */
+
+.coffee-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 68px;
+    height: 68px;
+
+    background: #26344b;
+    border: 1px solid #354a6b;
+    border-radius: 20px;
+
+    font-size: 2.3rem;
+}
+
+/* Current price panel */
+
+.price-section {
+    padding: 38px 32px 42px;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(79, 140, 255, 0.15),
+            transparent 75%
+        ),
+        #182131;
+}
+
+.price {
+    margin: 12px 0;
+
+    color: #8ab0ff;
+    font-size: clamp(2.8rem, 8vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+.price-status {
+    margin-top: 12px;
+    color: #a0aec0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Temperature and last updated */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+
+    padding: 26px 32px 32px;
+    background: #1b2230;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    min-width: 0;
+    padding: 20px;
+
+    background: #151c28;
+    border: 1px solid #303a4d;
+    border-radius: 18px;
+
+    transition:
+        border-color 180ms ease,
+        background 180ms ease;
+}
+
+.info-card:hover {
+    background: #1a2536;
+    border-color: #40577b;
+}
+
+/* Information icons */
+
+.info-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 44px;
+    height: 44px;
+
+    background: #26344b;
+    border: 1px solid #354a6b;
+    border-radius: 13px;
+
+    font-size: 1.4rem;
+}
+
+/* Information labels */
+
+.info-card p {
+    margin-bottom: 4px;
+
+    color: #a0aec0;
+    font-size: 0.83rem;
+}
+
+.info-card strong {
+    display: block;
+
+    color: #f1f5f9;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 760px) {
+    .detail-view {
+        margin: 28px auto 55px;
+    }
+
+    .coffee-header {
+        padding: 26px 24px;
+    }
+
+    .price-section {
+        padding: 32px 24px 36px;
+    }
+
+    .info-grid {
+        padding: 22px 24px 26px;
+    }
+}
+
+@media (max-width: 600px) {
+    .detail-view {
+        margin: 24px auto 45px;
+    }
+
+    .coffee-header {
+        padding: 24px 20px;
+    }
+
+    .coffee-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+        font-size: 1.9rem;
+    }
+
+    .price-section {
+        padding: 30px 20px;
+    }
+
+    .price {
+        letter-spacing: -1px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 12px;
+    }
+
+    .info-card {
+        padding: 16px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .back-button,
+    .info-card {
+        transition: none;
+    }
+}

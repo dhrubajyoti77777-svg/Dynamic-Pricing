@@ -50,27 +50,78 @@ const predictCoffeePrice = async (req, res) => {
 };
 
 
-const createCoffee= async (req,res)=>{
+const createCoffee = async (req, res) => {
+    try {
+        const { name, currentPrice } = req.body;
 
-    try{
-        const {name,currentPrice}=req.body;
-    
+        // Validate required fields
+        if (
+            typeof name !== "string" ||
+            !name.trim() ||
+            currentPrice === undefined ||
+            currentPrice === null ||
+            currentPrice === ""
+        ) {
+            return res.status(400).json({
+                message: "Coffee name and current price are required"
+            });
+        }
 
-    const coffee= await Coffee.create({
-        name,
-        currentPrice
-    });
+        const price = Number(currentPrice);
 
-    res.status(201).json(coffee);
+        if (!Number.isFinite(price) || price <= 0) {
+            return res.status(400).json({
+                message: "Current price must be a positive number"
+            });
+        }
 
-}
-catch(error){
-    res.status(500).json({
-        
-        message:"something went wrong",
-        error:error.message});
-}
+        const coffeeName = name.trim();
+
+        // Prevent duplicate coffee names (case-insensitive)
+        const existingCoffee = await Coffee.findOne({
+            name: {
+                $regex: new RegExp(
+                    "^" +
+                    coffeeName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") +
+                    "$",
+                    "i"
+                )
+            }
+        });
+
+        if (existingCoffee) {
+            return res.status(409).json({
+                message: "A coffee with this name already exists"
+            });
+        }
+
+        const coffee = await Coffee.create({
+            name: coffeeName,
+            currentPrice: price,
+            unitsSold: 0
+        });
+
+        return res.status(201).json({
+            message: "Coffee added successfully",
+            coffee
+        });
+
+    } catch (error) {
+        if (error.code === 11000) {
+            return res.status(409).json({
+                message: "A coffee with this name already exists"
+            });
+        }
+
+        console.error("Create Coffee Error:", error.message);
+
+        return res.status(500).json({
+            message: "Failed to add coffee",
+            error: error.message
+        });
+    }
 };
+
 
 
 
